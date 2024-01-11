@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(26, 26, 26);
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#e91e63,#ffc107);
+    clip-path: circle(20% at 30% 20%);
+
+}
+body::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#e91e63,#ffc107);
+    clip-path: circle(20% at 70% 90%);
+
+}
+.calc{
+    /* display: grid; */
+    position: relative;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    border-top: 2px solid rgba(255,255,255,0.5);
+    border-left: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+
+
+}
+.container{
+    display: grid;
+    position: relative;
+    /* border-radius: 10px; */
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+}
+.values{
+    grid-column: span 4;
+    height: 140px;
+    width: 380px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+}
+.nums{
+    display: grid;
+    place-items: center;
+    width: 65px;
+    height: 65px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    margin: 10px;
+
+}
+.nums:hover{
+    background-color: rgba(255,255,255,0.2);
+    transition: 0s;
+}
+.nums:active{
+    background-color: #ffc107;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.clear{
+    width: 150px;
+    grid-column: span 2;
+}
+.plus{
+    grid-row: span 2;
+    height: 150px;
+}
